@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katalog Produk</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow"></p>
+      <h1>KKN-T 7 GALERI</h1>
+      <p class="subtitle">Kumpulan produk karya KKN-T 7 Candipari.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="section-title">
+      <div>
+        <p class="eyebrow">KOLEKSI</p>
+        <h2>Produk Pilihan</h2>
+      </div>
+      <span id="productCount"></span>
+    </div>
+    <section id="productGrid" class="product-grid"></section>
+  </main>
+
+  <div id="detailModal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
+      <button class="close-btn" id="closeModal" aria-label="Tutup">&times;</button>
+
+      <div class="detail-gallery">
+        <div class="main-photo">
+          <img id="detailImage" src="" alt="">
+          <button class="gallery-btn gallery-prev" id="prevPhoto" aria-label="Foto sebelumnya">‹</button>
+          <button class="gallery-btn gallery-next" id="nextPhoto" aria-label="Foto berikutnya">›</button>
+          <span class="photo-counter" id="photoCounter"></span>
+        </div>
+        <div class="thumbnail-list" id="thumbnailList"></div>
+      </div>
+
+      <div class="detail-content">
+        <p class="eyebrow" id="detailCategory"></p>
+        <h2 id="detailTitle"></h2>
+        <p class="detail-price" id="detailPrice"></p>
+
+        <div class="description-label">DESKRIPSI</div>
+        <p class="detail-description" id="detailDescription"></p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 Katalog Produk — Pameran KKN</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

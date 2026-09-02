@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+<rect width="400" height="400" fill="#e9edf0"/>
+<rect x="105" y="80" width="190" height="170" rx="45" fill="white" stroke="#d3d3d3" stroke-width="5"/><path d="M145 125c-35 0-35 90 0 90h5v-75h-5c-10 0-10-20 0-20h20v95h-20" fill="#f6f6f6" stroke="#c7c7c7" stroke-width="4"/><path d="M235 125c35 0 35 90 0 90h-5v-75h5c10 0 10-20 0-20h-20v95h20" fill="#f6f6f6" stroke="#c7c7c7" stroke-width="4"/>
+<text x="200" y="350" text-anchor="middle" font-size="16" fill="#777" font-family="Arial">Earphone</text>
+</svg>
