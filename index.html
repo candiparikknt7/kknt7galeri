@@ -3,17 +3,203 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Katalog Produk</title>
+  <title>Katalog Produk KKN-7 Candipari</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="hero">
+  <!-- <header class="hero">
     <div class="hero-inner">
       <p class="eyebrow"></p>
       <h1>KKN-T 7 GALERI</h1>
       <p class="subtitle">Kumpulan produk karya KKN-T 7 Candipari.</p>
     </div>
-  </header>
+  </header> -->
+  <!-- ================= NAVBAR ================= -->
+    <nav class="navbar">
+
+      <div class="logo">
+        <img src="images/logo_kknt.png" alt="Logo Candipari">
+        <h2>Galeri KKN-T 07 Candipari</h2>
+      </div>
+
+      <!-- HAMBURGER -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Buka menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- MENU -->
+      <ul id="navMenu">
+        <li>
+          <a href="#kontak">KONTAK</a>
+        </li>
+        <li>
+          <a href="#tentang">TENTANG</a>
+        </li>
+      </ul>
+
+    </nav>
+
+    <!-- ================= SIDE MENU ================= -->
+
+    <div class="side-overlay" id="sideOverlay"></div>
+
+        <aside class="side-menu" id="sideMenu">
+
+          <!-- HEADER MENU -->
+          <div class="side-menu-header">
+            <h3>Menu</h3>
+
+            <button class="side-close" id="sideClose" aria-label="Tutup menu">
+              &times;
+            </button>
+          </div>
+
+
+          <!-- KONTAK -->
+          <div class="side-section">
+
+            <p class="side-title">KONTAK</p>
+
+            <!-- <a href="https://www.instagram.com/kkn07candipari?igsi=cTYzNHFiZ3ZhejMz" target="_blank" class="side-item">
+              <span class="side-icon">◎</span>
+              <span>Instagram</span>
+            </a> -->
+
+            <a href="tel:+6281234567890" class="side-item">
+              <span class="side-icon">☎</span>
+              <span>+62 896-9998-5972 (Novi)</span>
+            </a>
+
+            <a href="mailto:emailkkn@example.com" class="side-item">
+              <span class="side-icon">✉</span>
+              <span>kknumsidadesacandipari@gmail.com</span>
+            </a>
+
+          </div>
+
+
+          <!-- SOSIAL MEDIA -->
+          <div class="side-section side-divider">
+
+            <p class="side-title">MEDIA</p>
+
+            <!-- <a href="#" class="side-item">
+              <span class="side-icon social-pink">I</span>
+              <span>Instagram KKN</span>
+            </a> -->
+
+            <a href="https://www.instagram.com/kkn07candipari?igsi=cTYzNHFiZ3ZhejMz" target="_blank" class="side-item">
+              <span class="side-icon social-pink">I</span>
+              <span>Instagram</span>
+            </a> 
+            
+            <a href="https://www.tiktok.com/@kkn07candipari?is_from_webapp=1&sender_device=pc" class="side-item">
+              <span class="side-icon social-purple">T</span>
+              <span>TikTok</span>
+            </a>
+
+          </div>
+
+
+          <!-- TENTANG -->
+          <div class="side-section side-divider">
+
+            <p class="side-title">TENTANG</p>
+
+            <a href="#tentang" class="side-link">
+              Tentang Kami
+            </a>
+
+            <!-- <a href="#kegiatan" class="side-link">
+              Kegiatan KKN
+            </a>
+
+            <a href="#produk" class="side-link">
+              Produk
+            </a>  -->
+
+          </div>
+
+        </aside>
+
+
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+
+      <!-- BACKGROUND CAROUSEL -->
+      <div class="hero-slider">
+
+        <div class="slides">
+
+          <img
+            src="images/komposter_kknt7_candipari_1.jpg"
+            class="slide active"
+            alt="Kegiatan KKN-T 07 Candipari"
+          >
+
+          <img
+            src="images/produk/pupuk/poc250ml.png"
+            class="slide"
+            alt="Produk Poc Candipari"
+          >
+
+          <img
+            src="images/produk/ganci/ganci1.png"
+            class="slide"
+            alt="Produk Ganci Candipari"
+          >
+
+        </div>
+
+        <!-- Overlay -->
+        <div class="hero-overlay"></div>
+
+      </div>
+
+
+      <!-- ISI HERO -->
+      <div class="hero-content">
+
+        <!-- <p class="hero-label">KKN-T 07 CANDIPARI</p> -->
+
+        <h1>
+          Selamat Datang!
+          <!-- <span>di Katalog Produk KKN-T 07 Candipari</span> -->
+        </h1>
+
+        <p>
+          Temukan berbagai produk Karya KKN-T 7 Candipari.
+        </p>
+
+        <!-- <a href="#pesan" class="btn">
+          Pesan
+        </a> -->
+        <!-- <a
+          href="https://wa.me/6289699985972?text=Halo%20KKN-T%2007%20Candipari%2C%20saya%20ingin%20memesan%20produk."
+          class="btn"
+          target="_blank"
+        >
+          Pesan
+        </a> -->
+        <a href="#" class="btn" id="orderButton">
+          Pesan
+        </a>
+
+      </div>
+
+
+      <!-- DOT CAROUSEL -->
+      <div class="dots">
+
+        <button class="dot active" aria-label="Slide 1"></button>
+        <button class="dot" aria-label="Slide 2"></button>
+        <button class="dot" aria-label="Slide 3"></button>
+
+      </div>
+
+</section>
 
   <main class="container">
     <div class="section-title">
@@ -54,7 +240,7 @@
   </div>
 
   <footer>
-    <p>© 2026 Katalog Produk — Pameran KKN</p>
+    <p>© 2026 KKN-T 7 Candipari </p>
   </footer>
 
   <script src="script.js"></script>

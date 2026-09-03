@@ -55,7 +55,11 @@ body.modal-open { overflow: hidden; }
   margin-bottom: 24px;
 }
 
-.section-title h2 { font-size: 28px; letter-spacing: -1px; }
+.section-title h2 { 
+  font-size: 28px; 
+  letter-spacing: -1px; 
+  color: #079b94;
+}
 #productCount { color: #777; font-size: 13px; }
 
 .product-grid {
@@ -66,6 +70,10 @@ body.modal-open { overflow: hidden; }
 
 .product-card {
   position: relative;
+  /* baru */
+  display: flex;
+  flex-direction: column;
+  /*  */
   background: white;
   border-radius: 10px;
   overflow: hidden;
@@ -89,9 +97,29 @@ body.modal-open { overflow: hidden; }
   background: #e9e9e7;
 }
 
-.product-info { padding: 14px 16px 17px; }
-.product-name { font-size: 15px; font-weight: 600; margin-bottom: 5px; }
-.product-price { font-size: 13px; color: #777; }
+/* .product-info { 
+  padding: 14px 16px 17px; 
+  background: #e9e9e7; 
+  background: #079b94;
+} */
+.product-info { 
+  margin-top: auto;
+  min-height: 82px;
+  box-sizing: border-box;
+  padding: 14px 16px 17px; 
+  background: #079b94;
+}
+  
+.product-name { 
+  font-size: 15px; 
+  font-weight: 600; 
+  margin-bottom: 5px; 
+  color: #ffffff; 
+  }
+.product-price { 
+  font-size: 13px; 
+  color: #ffffff; 
+}
 
 .arrow {
   position: absolute;
@@ -331,7 +359,585 @@ footer {
   border-top: 1px solid #ddd;
 }
 
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 78px;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+  color: white;
+}
+
+.navbar .logo {
+  position: static;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  overflow: visible;
+}
+
+.navbar .logo img {
+  /* width: 48px;
+  height: 48px; */
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.navbar .logo h2 {
+  /* font-size: 18px; */
+  font-size: 30px;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: opacity .2s ease;
+}
+
+.navbar ul li a:hover {
+  opacity: .7;
+}
+
+
+/* ================= HAMBURGER ================= */
+
+.menu-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  padding: 9px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: white;
+  border-radius: 2px;
+}
+
+
+/* ================= HERO BARU ================= */
+
+.hero {
+  position: relative;
+  /* min-height: 620px;
+  height: 78vh; */
+  min-height: 420px;
+  height: 80vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #202020;
+  color: white;
+  padding: 0;
+}
+
+.hero-slider {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.slides {
+  position: absolute;
+  inset: 0;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.03);
+  transition:
+    opacity .8s ease,
+    transform 5s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, .75) 0%,
+      rgba(0, 0, 0, .45) 50%,
+      rgba(0, 0, 0, .25) 100%
+    );
+}
+
+
+/* ================= HERO CONTENT ================= */
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(1080px, calc(100% - 40px));
+  margin: 0 auto;
+  padding-top: 70px;
+}
+
+.hero-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #ddd;
+  margin-bottom: 16px;
+}
+
+.hero-content h1 {
+  max-width: 760px;
+  /* font-size: clamp(38px, 6vw, 68px); */
+  font-size: clamp(40px, 6vw, 60px);
+  line-height: 1.05;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+}
+
+.hero-content h1 span {
+  display: block;
+}
+
+.hero-content > p:not(.hero-label) {
+  max-width: 540px;
+  color: #e0e0e0;
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+
+/* ================= BUTTON ================= */
+
+.hero-content .btn {
+  display: inline-flex;
+  /* display: flex; */
+  /* tambah baru */
+  /* width: fit-content;
+  margin: 0 auto; */
+  /*  */
+  align-items: center;
+  justify-content: center;
+  /* padding: 13px 22px; */
+  padding: 8px 60px;
+  border-radius: 7px;
+  background: rgb(255, 255, 255);
+  color: #079b94;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 800;
+  transition:
+    transform .2s ease,
+    background .2s ease;
+}
+
+.hero-content .btn:hover {
+  transform: translateY(-2px);
+  background: #eeeeee;
+}
+
+
+/* ================= DOT CAROUSEL ================= */
+
+.dots {
+  position: absolute;
+  z-index: 3;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .45);
+  cursor: pointer;
+  transition: all .25s ease;
+}
+
+.dot.active {
+  width: 25px;
+  border-radius: 10px;
+  background: white;
+}
+
+/*  */
+
+
+/* ================= SIDE MENU ================= */
+
+.side-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .45);
+  z-index: 99;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition:
+    opacity .3s ease,
+    visibility .3s ease;
+}
+
+.side-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* ================= SIDE DRAWER ================= */
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: min(340px, 82vw);
+  height: 100vh;
+
+  background: white;
+  color: #222;
+
+  z-index: 100;
+
+  overflow-y: auto;
+
+  transform: translateX(-100%);
+  transition: transform .3s ease;
+
+  box-shadow: 8px 0 30px rgba(0, 0, 0, .15);
+}
+
+.side-menu.show {
+  transform: translateX(0);
+}
+
+
+/* ================= SIDE HEADER ================= */
+
+.side-menu-header {
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 20px;
+
+  border-bottom: 1px solid #eeeeee;
+}
+
+.side-menu-header h3 {
+  margin: 0;
+
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.side-close {
+  width: 34px;
+  height: 34px;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: #f3f3f3;
+  color: #333;
+
+  font-size: 23px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.side-close:hover {
+  background: #e8e8e8;
+}
+
+
+/* ================= SIDE SECTION ================= */
+
+.side-section {
+  padding: 18px 20px;
+}
+
+.side-divider {
+  border-top: 1px solid #eeeeee;
+}
+
+.side-title {
+  margin-bottom: 12px;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  color: #999;
+}
+
+
+/* ================= SIDE ITEM ================= */
+
+.side-item {
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  min-height: 38px;
+
+  color: #333;
+  text-decoration: none;
+
+  font-size: 13px;
+
+  transition: color .2s ease;
+}
+
+.side-item:hover {
+  color: #079b94;
+}
+
+
+/* ================= ICON ================= */
+
+.side-icon {
+  width: 25px;
+  height: 25px;
+
+  flex: 0 0 25px;
+
+  border-radius: 50%;
+
+  background: #f1f1f1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.social-pink {
+  background: #f7dbe5;
+}
+
+.social-yellow {
+  background: #f1e79d;
+}
+
+.social-purple {
+  background: #e3d7ef;
+}
+
+
+/* ================= SIDE LINK ================= */
+
+.side-link {
+  display: block;
+
+  padding: 6px 0;
+
+  color: #333;
+  text-decoration: none;
+
+  font-size: 12px;
+
+  transition: color .2s ease;
+}
+
+.side-link:hover {
+  color: #079b94;
+}
+
+/*  */
+
+
+
 @media (max-width: 760px) {
+
+    .navbar {
+      height: 68px;
+      padding: 0 20px;
+    }
+
+    .navbar .logo {
+      gap: 9px;
+    }
+
+    .navbar .logo img {
+      width: 60px;
+      height: 60px;
+    }
+
+    .navbar .logo h2 {
+      font-size: 13px;
+    }
+
+    .menu-toggle {
+      display: flex;
+    }
+
+    .navbar ul {
+      position: absolute;
+      top: 68px;
+      left: 14px;
+      right: 14px;
+      display: none;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      padding: 8px;
+      background: rgba(25, 25, 25, .96);
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+
+    .navbar ul.show {
+      display: flex;
+    }
+
+    .navbar ul li a {
+      display: block;
+      padding: 13px 14px;
+    }
+
+    .hero {
+      min-height: 160px;
+      height: 50vh;
+    }
+
+    /* .hero-content {
+      width: calc(100% - 40px);
+      padding-top: 55px;
+    } */
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: calc(100% - 40px);
+      /* padding-top: 45px; */
+      padding-bottom: 25px;
+    }
+
+    .hero-content h1 {
+      /* font-size: clamp(34px, 10vw, 48px); */
+      font-size: clamp(15px, 8vw, 25px);
+      letter-spacing: -1.5px;
+    }
+
+    .hero-content h1 span {
+      margin-top: 5px;
+    }
+
+    .hero-content .btn{
+      margin-bottom:  0;
+      display: flex;
+      /* tambah baru */
+      width: fit-content;
+      margin: 0 auto;
+      padding: 8px 50px;
+      /*  */
+    }
+
+    .hero-content > p:not(.hero-label) {
+      font-size: 14px;
+    }
+
+    .hero-overlay {
+      background:
+        linear-gradient(
+          90deg,
+          rgba(0, 0, 0, .78),
+          rgba(0, 0, 0, .38)
+        );
+    }
+
+    .dots {
+      bottom: 5px;
+    }
+
+  
+  /* Side Menu Hamburger */
+   .side-menu {
+    width: 82vw;
+    max-width: 330px;
+  }
+
+  .side-menu-header {
+    height: 64px;
+    background: #079b94;
+    color: white;
+    padding: 0 18px;
+  }
+
+  .side-section {
+    padding: 16px 18px;
+  }
+
+
+  /* Lalu tambahkan sedikit CSS untuk mencegah halaman belakang ikut scroll: */
+
+  body.menu-open {
+  overflow: hidden;
+}
+  /*  */
+
+
+
+
   .hero { padding: 42px 20px 48px; }
 
   .hero-inner, .container {
@@ -345,9 +951,18 @@ footer {
     gap: 12px;
   }
 
-  .product-info { padding: 11px 12px 14px; }
-  .product-name { font-size: 13px; }
-  .product-price { font-size: 12px; }
+  .product-info { 
+    padding: 11px 12px 14px; 
+    background: #079b94;
+  }
+  .product-name { 
+    font-size: 13px; 
+    color: #ffffff;
+  }
+  .product-price { 
+    font-size: 12px; 
+    color: #ffffff;
+  }
 
   .arrow {
     right: 8px;

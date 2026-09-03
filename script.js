@@ -1,74 +1,55 @@
 const products = [
   {
-    name: "Komposter",
-    price: "Rp60.000",
-    category: "PERALATAN",
-    // Tambahkan foto sebanyak yang diperlukan di array ini.
-    images: ["images/komposter_kknt7_candipari_1.jpg", "images/komposter_2.jpg"],
-    description: `Komposter ember tumpuk tempat pengelolaan sampah organik menjadi pupuk organik cair (POC) dan pupuk organik padat..
-
-Alat ini sangat efisien dalam mengelola sampah organik menjadi barang yang bernilai guna..`
-  },
-  {
     name: "Pupuk Organik Cair (POC) 250 ML",
     price: "Rp20.000",
     category: "PUPUK",
-    images: ["images/poc_1.jpg", "images/poc_1.jpg"],
+    images: ["images/produk/pupuk/poc250ml.png", "images/produk/pupuk/poc250mlbelakang.png"],
     description: `Pupuk Organik Cair (POC) siap pakai: 250ML.
 
 Pupuk  yang dibuat menggunakan bahan organik seperti sayuran dan buah, dengan campuran larutan fermentasi yang baik untuk tanaman.`
   },
   {
     name: "Pupuk Organik Cair (POC) 500 ML",
-    price: "Rp40.000",
+    price: "Rp50.000",
     category: "PUPUK",
-    images: ["images/poc_2.jpeg"],
+    images: ["images/produk/pupuk/pocrefill500ml.png", "images/produk/pupuk/pocrefill500mlbelakang.png"],
     description: `Pupuk Organik Cair (POC) siap pakai: 250ML.
 
 Pupuk  yang dibuat menggunakan bahan organik seperti sayuran dan buah, dengan campuran larutan fermentasi yang baik untuk tanaman.`
   },
   {
+    name: "Pupuk Organik Padat: 1,5 KG",
+    price: "Rp25.000",
+    category: "PUPUK",
+    images: ["images/produk/pupuk/pupukpadat.png"],
+    description: `Pupuk Organik Cair (POC) siap pakai: 250ML.
+
+Pupuk  yang dibuat menggunakan bahan organik seperti sayuran dan buah, dengan campuran larutan fermentasi yang baik untuk tanaman.`
+  },
+  {
+    name: "Komposter",
+    price: "Rp60.000",
+    category: "PERALATAN",
+    // Tambahkan foto sebanyak yang diperlukan di array ini.
+    images: ["images/produk/komposter/komposter.png"],
+    description: `Komposter ember tumpuk tempat pengelolaan sampah organik menjadi pupuk organik cair (POC) dan pupuk organik padat..
+
+Alat ini sangat efisien dalam mengelola sampah organik menjadi barang yang bernilai guna..`
+  },
+  {
     name: "Gantungan Kunci Stik Es Cream",
     price: "Rp5.000",
     category: "SOUVENIR",
-      images: ["images/ganci2.jpg", "images/ganci1.jpg"],
+    images: ["images/produk/ganci/ganci1.png", "images/produk/ganci/ganci2.png" ],
     description: `Gantungan Kunci Stik Es Cream yang dibuat dengan teknik transfer gambar dari kertas ke media kayu.`
   },
   {
     name: "Lilin Aromaterapi",
     price: "Rp5.000",
     category: "SOUVENIR",
-    images: ["images/lilin.jpg"],
+    images: ["images/produk/lilin/lilin1.png", "images/produk/lilin/lilin2.png", "images/produk/lilin/lilin3.png"],
     description: `Lilin ber aromaterapi yang dibuat dengan bahan minyak jelantah bekas.`
   },
-  {
-    name: "Dompet Kulit",
-    price: "Rp125.000",
-    category: "AKSESORI",
-    images: ["images/produk-6.svg"],
-    description: `Dompet dengan desain ringkas untuk menyimpan kartu dan kebutuhan kecil.`
-  },
-  {
-    name: "Tas Serbaguna",
-    price: "Rp110.000",
-    category: "FASHION",
-    images: ["images/produk-7.svg"],
-    description: `Tas praktis dengan desain sederhana untuk membawa barang-barang sehari-hari.`
-  },
-  {
-    name: "Earphone",
-    price: "Rp159.000",
-    category: "ELEKTRONIK",
-    images: ["images/produk-8.svg"],
-    description: `Earphone bergaya minimalis yang cocok untuk mendengarkan musik dan menemani aktivitas.`
-  },
-  {
-    name: "Tanaman Hias",
-    price: "Rp75.000",
-    category: "RUMAH",
-    images: ["images/produk-9.svg"],
-    description: `Tanaman hias mungil yang cocok untuk mempercantik meja kerja atau sudut ruangan.`
-  }
 ];
 
 const grid = document.getElementById("productGrid");
@@ -192,3 +173,152 @@ document.addEventListener("keydown", e => {
 });
 
 renderProducts();
+
+
+
+/* ================= NAVBAR MOBILE ================= */
+
+// const menuToggle = document.getElementById("menuToggle");
+// const navMenu = document.getElementById("navMenu");
+
+// if (menuToggle && navMenu) {
+//   menuToggle.addEventListener("click", () => {
+//     navMenu.classList.toggle("show");
+//   });
+
+//   navMenu.querySelectorAll("a").forEach(link => {
+//     link.addEventListener("click", () => {
+//       navMenu.classList.remove("show");
+//     });
+//   });
+// }
+
+
+/* ================= HERO CAROUSEL ================= */
+
+const slides = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
+
+let currentSlide = 0;
+let slideTimer;
+
+function showSlide(index) {
+  if (!slides.length) return;
+
+  currentSlide = index;
+
+  slides.forEach((slide, i) => {
+    slide.classList.toggle("active", i === currentSlide);
+  });
+
+  dots.forEach((dot, i) => {
+    dot.classList.toggle("active", i === currentSlide);
+  });
+}
+
+function nextSlide() {
+  const next = (currentSlide + 1) % slides.length;
+  showSlide(next);
+}
+
+function startSlider() {
+  clearInterval(slideTimer);
+
+  if (slides.length > 1) {
+    slideTimer = setInterval(nextSlide, 5000);
+  }
+}
+
+dots.forEach((dot, index) => {
+  dot.addEventListener("click", () => {
+    showSlide(index);
+    startSlider();
+  });
+});
+
+showSlide(0);
+startSlider();
+
+
+/* ================= SIDE MENU ================= */
+
+const menuToggle = document.getElementById("menuToggle");
+const sideMenu = document.getElementById("sideMenu");
+const sideOverlay = document.getElementById("sideOverlay");
+const sideClose = document.getElementById("sideClose");
+
+function openSideMenu() {
+  sideMenu.classList.add("show");
+  sideOverlay.classList.add("show");
+
+  document.body.classList.add("menu-open");
+}
+
+function closeSideMenu() {
+  sideMenu.classList.remove("show");
+  sideOverlay.classList.remove("show");
+
+  document.body.classList.remove("menu-open");
+}
+
+
+/* BUKA HAMBURGER */
+
+if (menuToggle) {
+  menuToggle.addEventListener("click", openSideMenu);
+}
+
+
+/* TOMBOL X */
+
+if (sideClose) {
+  sideClose.addEventListener("click", closeSideMenu);
+}
+
+
+/* KLIK AREA GELAP */
+
+if (sideOverlay) {
+  sideOverlay.addEventListener("click", closeSideMenu);
+}
+
+
+/* KLIK MENU */
+
+document.querySelectorAll(".side-menu a").forEach(link => {
+
+  link.addEventListener("click", () => {
+    closeSideMenu();
+  });
+
+});
+
+/* ================= PESAN VIA WHATSAPP ================= */
+
+const orderButton = document.getElementById("orderButton");
+
+if (orderButton) {
+  orderButton.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const nomorAdmin = "6289699985972";
+
+    const pesan = `Halo Admin KKN-T 07 Candipari 👋
+
+Saya ingin melakukan pemesanan produk.
+
+1. Nama Produk:
+2. Jumlah Produk:
+3. Nama Pemesan:
+4. Alamat:
+5. Nomor WhatsApp:
+
+Mohon diinformasikan total harga dan proses selanjutnya.
+
+Terima kasih 🙏`;
+
+    const url = "https://wa.me/" + nomorAdmin + "?text=" + encodeURIComponent(pesan);
+
+    window.open(url, "_blank");
+  });
+}
