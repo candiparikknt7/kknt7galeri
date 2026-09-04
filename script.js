@@ -1,7 +1,7 @@
 const products = [
   {
     name: "Pupuk Organik Cair (POC) 250 ML",
-    price: "Rp20.000",
+    price: "Rp25.000",
     category: "PUPUK",
     images: ["images/produk/pupuk/poc250ml.png", "images/produk/pupuk/poc250mlbelakang.png"],
     description: `Pupuk Organik Cair (POC) siap pakai: 250ML.
