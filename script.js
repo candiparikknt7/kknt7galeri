@@ -84,11 +84,11 @@ const products = [
     name: "Gantungan Kunci Stik Es Cream",
     price: "Rp5.000",
     category: "SOUVENIR",
-    images: ["images/produk/ganci/ganci1.png", "images/produk/ganci/ganci2.png" ],
+    images: ["images/produk/ganci/ganci1.png", "images/produk/ganci/ganci2.png", "images/produk/ganci/ganci3.png", "images/produk/ganci/ganci7.png" , "images/produk/ganci/ganci8.jpg", "images/produk/ganci/ganci9.jpg", "images/produk/ganci/ganci10.jpg"],
     description: `Gantungan Kunci Stik Es Cream yang dibuat dengan teknik transfer gambar dari kertas ke media kayu.`
   },
   {
-    name: "Lilin Aromaterapi",
+    name: "Lilin Aromaterapi Minyak Jelantah",
     price: "Rp5.000",
     category: "SOUVENIR",
     images: ["images/produk/lilin/lilin1.png", "images/produk/lilin/lilin2.png", "images/produk/lilin/lilin3.png"],
